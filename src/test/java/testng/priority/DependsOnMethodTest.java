@@ -2,29 +2,29 @@ package testng.priority;
 
 import org.testng.annotations.Test;
 
-public class PriorityTest2 {
+public class DependsOnMethodTest {
 
-    @Test(priority = 0)
+    @Test
     public void testLogin() {
         System.out.println("Login");
     }
 
-    @Test(priority = 1)
+    @Test(dependsOnMethods = {"testLogin"})
     public void testCreate() {
         System.out.println("Create");
     }
 
-    @Test(priority = 2)
+    @Test(dependsOnMethods = {"testLogin","testCreate"})
     public void testEdit() {
         System.out.println("Edit");
     }
 
-    @Test(priority = 3)
+    @Test(dependsOnMethods = {"testEdit"})
     public void testDelete() {
         System.out.println("Delete");
     }
 
-    @Test
+    @Test(dependsOnMethods = "testDelete")
     public void testLogout() {
         System.out.println("Logout");
     }
