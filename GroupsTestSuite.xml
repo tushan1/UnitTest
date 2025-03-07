@@ -2,6 +2,12 @@
 
 <suite name="Groups Test Regression Suite" verbose="1">
     <test name="GroupTest">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <exclude name="reg"/>
+            </run>
+        </groups>
         <classes>
             <class name="testng.groups.GroupsTest1"/>
             <class name="testng.groups.GroupsTest2"/>
