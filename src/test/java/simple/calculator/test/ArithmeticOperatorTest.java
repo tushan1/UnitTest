@@ -21,6 +21,6 @@ public class ArithmeticOperatorTest {
         int expectedResult = inputData1+inputData2;
         int actualValue = cal.sum(inputData1,inputData2);
 
-        Assert.assertEquals(actualValue,expectedResult,"Failed to calculate sum: ");
+        Assert.assertEquals(actualValue,expectedResult,"Failed to calculate sum: " );
     }
 }
